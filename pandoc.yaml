@@ -15,7 +15,7 @@ variables:
   site-url:  https://lucas-martelotte.github.io/
   site-repo: https://github.com/lucas-martelotte/lucas-martelotte.github.io/
 
-citeproc: true
+#citeproc: true
 
 # Log boilerplate
 verbosity: WARNING
