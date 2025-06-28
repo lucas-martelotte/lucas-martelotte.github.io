@@ -1,0 +1,87 @@
+/*
+  Environments for Theorems etc.
+
+  Use this classes in a div to style it as an elegant theorem box.
+
+  Based on LaTeX's amsthm package.
+
+* Adapted from the code in
+  http://drz.ac/2013/01/17/latex-theorem-like-environments-for-the-web/
+  http://drz.ac/downloads/code/css/theorems.css
+*/
+
+.Theorem, .Lemma, .Definition, .Aside {
+  display:        block;
+  margin-top:     12px;
+  margin-bottom:  12px;
+  margin-left:    0px;
+  margin-right:   0px;
+  padding-left:   1em;
+  padding-right:  0.2em;
+  padding-top:    0.1em;
+  padding-bottom: 0em;
+  border-left:    5px solid;
+}
+
+.Theorem::before, .Lemma::before, .Definition::before {
+  font-weight: bold;
+  font-style:  normal;
+  white-space: nowrap;
+}
+
+.Theorem {
+  border-left-color: #00c395;
+}
+
+.Lemma {
+  border-left-color: #d78c00;
+}
+.Definition {
+  border-left-color: #26cd00;
+}
+
+.Aside {
+  border-left-color: var(--color-lightning);
+}
+
+.Theorem[data-title]::before {
+  content: 'Theorem (' attr(data-title) ').';
+}
+
+.Theorem::before {
+  content: "Theorem.";
+}
+
+.Lemma[data-title]::before {
+  content: 'Lemma (' attr(data-title) ').';
+}
+
+.Lemma::before {
+  content: "Lemma.";
+}
+
+.Definition[data-title]::before {
+  content: 'Definition (' attr(data-title) ').';
+}
+
+.Definition::before {
+  content: "Definition.";
+}
+
+.Proof {
+  display:    block;
+  margin:     12px 0;
+  font-style: normal;
+  overflow:   hidden;
+}
+
+.Proof > p:first-child:before {
+  content:    "Proof. ";
+  font-style: italic;
+}
+
+/* A proof only truly ends with QED square */
+.Proof > p:last-child:after {
+  content: "\25FB";
+  float:   right;
+}

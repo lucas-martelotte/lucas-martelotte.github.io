@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 378.98 457.04" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<filter id="f" x="-.013138" y="-.0083797" width="1.0263" height="1.0168" color-interpolation-filters="sRGB">
+<feColorMatrix result="color1" type="hueRotate" values="180"/>
+<feColorMatrix result="color2" type="saturate" values="0.3"/>
+</filter>
+<filter id="e" x="-4.515" y="-4.7034e-5" width="10.03" height="1.0001" color-interpolation-filters="sRGB">
+<feColorMatrix result="color1" type="hueRotate" values="180"/>
+<feColorMatrix result="color2" type="saturate" values="0.3"/>
+</filter>
+<filter id="d" x="-.0037904" y="-.0095924" width="1.0076" height="1.0192" color-interpolation-filters="sRGB">
+<feColorMatrix result="color1" type="hueRotate" values="180"/>
+<feColorMatrix result="color2" type="saturate" values="0.3"/>
+</filter>
+</defs>
+<g transform="translate(-65.894 -3.6894)">
+<g fill="#ffc925">
+<g fill="#ffc925">
+<g fill="#ffc925">
+<circle cx="256" cy="41.447" r="26.758" fill="#ffc925" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+</g>
+</g>
+</g>
+<path d="m239.3 62.356-118.95 148.94" fill="#ffc925" fill-rule="evenodd" filter="url(#f)" stroke="#ffc925" stroke-width="4"/>
+<path d="m255.91 68.205-0.44297 137.24" fill="#ffc925" fill-rule="evenodd" filter="url(#e)" stroke="#ffc925" stroke-width="4"/>
+<path d="m272.62 62.421 117.89 148.81" fill="none" stroke="#ffc925" stroke-width="4"/>
+<path d="m103.65 258.97v164" fill="none" stroke="#000" stroke-opacity=".8" stroke-width="4"/>
+<path d="m120.31 253.15 135.08 169.82" fill="none" stroke="#000" stroke-opacity=".8" stroke-width="4"/>
+<path d="m126.31 246.45 280.81 176.52" fill="none" stroke="#000" stroke-opacity=".8" stroke-width="4"/>
+<path d="m238.73 253.15-135.08 169.82" fill="none" stroke="#000" stroke-opacity=".8" stroke-width="4"/>
+<path d="m255.38 258.97v164" fill="none" stroke="#000" stroke-opacity=".8" stroke-width="4"/>
+<path d="m272.04 253.15 135.08 169.82" fill="none" stroke="#000" stroke-opacity=".8" stroke-width="4"/>
+<path d="m407.12 258.97v164" fill="none" stroke="#ffc925" stroke-width="4"/>
+<path d="m390.46 253.15-135.08 169.82" fill="none" stroke="#ffc925" stroke-width="4"/>
+<path d="m384.46 246.45-280.81 176.52" fill="#ffc925" fill-rule="evenodd" filter="url(#d)" stroke="#ffc925" stroke-width="4"/>
+<circle id="c" cx="255.38" cy="232.21" r="26.758" fill="#dcdcdc" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+<circle id="b" cx="103.65" cy="232.21" r="26.758" fill="#dcdcdc" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+<circle id="a" cx="407.12" cy="232.21" r="26.758" fill="#ffc925" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+<path d="m103.65 232.21" fill="none" stroke="#000" stroke-width="4"/>
+<use transform="translate(0 190.76)" xlink:href="#c"/>
+<use transform="translate(0 190.76)" xlink:href="#b"/>
+<use transform="translate(0 190.76)" xlink:href="#a"/>
+<circle cx="255.38" cy="422.97" r="26.758" fill="#ffc925" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+<circle cx="103.65" cy="422.97" r="26.758" fill="#dcdcdc" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+<circle cx="407.12" cy="422.97" r="26.758" fill="#dcdcdc" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+</g>
+</svg>

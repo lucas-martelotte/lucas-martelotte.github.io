@@ -1,0 +1,38 @@
+
+/*
+  ~*~ Color palette ~*~
+*/
+
+:root {
+  --color-background: #fdfdfd;
+  --color-typography: #222222;
+  --color-faded:      hsl(0 0% 58%);
+  --color-accent:     hsl(139 52% 50%);
+  --color-lightning:  hsl(139 49% 68%);
+  --color-crystal:    hsl(139 45% 82%);
+  --color-attention:  hsl(188 49% 55%);
+  --color-opposite:   hsl(39 100% 50%);
+
+  --base-padding:     16px;
+  --article-width:    40rem;
+}
+
+/*
+  ~*~ Custom fonts ~*~
+*/
+
+@font-face {
+  font-family:  'Montserrat';
+  src:          url('/font/Montserrat-VF.woff2') format('woff2-variations');
+  font-weight:  125 900;
+  font-stretch: 75% 125%;
+  font-style:   normal;
+}
+
+@font-face {
+  font-family:  'Montserrat';
+  src:          url('/font/Montserrat-Italic-VF.woff2') format('woff2-variations');
+  font-weight:  125 900;
+  font-stretch: 75% 125%;
+  font-style:   italic;
+}
