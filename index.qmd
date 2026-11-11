@@ -1,3 +1,7 @@
+---
+pagetitle: "Lucas Rufino"
+---
+
 Hello, my name is <b>Lucas Rufino</b>. <br>
 I'm currently a PhD student at Nagoya University. <br>
 

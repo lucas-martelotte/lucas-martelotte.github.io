@@ -4,7 +4,10 @@ project:
     - index.qmd
   resources:
     - notes/*.pdf
+    - other_files/*
 
 format:
   html:
     minimal: true
+    include-in-header:
+      text: '<link rel="icon" href="favicon.png">'
