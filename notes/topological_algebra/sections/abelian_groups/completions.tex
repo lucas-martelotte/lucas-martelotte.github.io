@@ -1,0 +1,77 @@
+\subsection{Completions}
+
+\begin{definition} Let $G$ be an LTA and $\mathcal{U} = \{U_i\}$ an FSG. We define the $\mathcal{U}$-completion of $G$ as
+\[G_{\mathcal{U}}^\land := \lim_{\leftarrow} G/U_i.\]
+\end{definition}
+
+\noindent We write $\pi_U = \pi_U^{\mathcal{U}}$ for a canonical projection $G_{\mathcal{U}}^\land \rightarrow G/U$. We have a natural map $c_\mathcal{U} : G \rightarrow G_\mathcal{U}^\land$ (given by $g \mapsto (\text{class of }g\text{ in } G/U_i)_i$). This map is continuous. Indeed, by the definition of the topology on the inverse limit, this map is continuous if and only if it is continuous after composing with the projections, which yields the trivially continuous map $G \rightarrow G/U_i$.
+
+\begin{proposition}[All completions are the same]\label{prop:completions_are_all_the_same} Let $G$ be an LTA. For every pair of FSG's $\mathcal{U}, \mathcal{V}$, there exists a natural isomorphism $\phi_{\mathcal{U}, \mathcal{V}} : G_\mathcal{U}^\land \cong G_\mathcal{V}^\land$. Moreover, these maps satisfy the following properties.
+\begin{enumerate}
+\item[(i)] For all FSG's $\mathcal{U}, \mathcal{V}$ and $U \in \mathcal{U} \cap \mathcal{V}$, we have $\pi_{U}^{\mathcal{V}} \circ \phi_{\mathcal{U}, \mathcal{V}} = \pi_U^\mathcal{U}$.
+\item[(ii)] For all FSG's $\mathcal{U}, \mathcal{V}, \mathcal{W}$, we have $\phi_{\mathcal{U}, \mathcal{W}} = \phi_{\mathcal{V}, \mathcal{W}} \circ \phi_{\mathcal{U}, \mathcal{V}}$.
+\item[(iii)] For all FSG's $\mathcal{U}, \mathcal{V}$, we have $\phi_{\mathcal{U}, \mathcal{V}} \circ c_\mathcal{U} = c_{\mathcal{V}}$.
+\end{enumerate}
+\end{proposition}
+\begin{proof} \TODO
+\end{proof}
+
+\noindent \cref{prop:completions_are_all_the_same} allows us to talk about \emph{the} completion $G^\land$, since all completions $G_{\mathcal{U}}^\land$ are canonically identified. Perhaps a more concrete way to view $G^\land$ is as the completion over the FSG of \emph{all} neighborhoods of $1$. In fact, we could have skipped all of these identification and just that as the definition of completion, but it is very useful to be able to "restrict" ourselves to smaller FSG's. Notice also that condition (iii) ensures that we have a canonical map $c : G \rightarrow G^\land$. Moreover, note that for any open subgroup $U \subseteq G$ we have a canonical morphism $G^\land \rightarrow G/U$.
+
+\begin{definition}\label{def:c_map_and_cauchy_sequences} Let $G$ be a TA. We have the following.
+\begin{enumerate}
+    \item[(i)] $G$ is said to be Hausdorff if the map $c : G \rightarrow G^\land$ is injective.
+    \item[(ii)] $G$ is said to be complete if the map $c : G \rightarrow G^\land$ is surjective.
+\end{enumerate}
+\end{definition}
+
+\noindent Below we show that the above definitions agrees with the usual notion of Hausdorff for topological spaces and complete for metric spaces.
+
+\begin{proposition} Let $G$ be an LTA. We have the following.
+\begin{enumerate}
+    \item[(i)] $G$ is Hausdorff if and only if points can be separated, i.e. for any two points $g, h \in G$ there are open nbhds $g \in U, h \in V$ such that $U \cap V = \varnothing$.
+    \item[(ii)] If the topology on $G$ is metrizable, then $G$ is complete if and only if every cauchy sequence converges.
+\end{enumerate}
+\end{proposition}
+\begin{proof} \TODO
+\end{proof}
+
+\begin{proposition} We have the following.
+\begin{enumerate}
+    \item[(i)] The completion $G^\land$ is always complete and Hausdorff.
+    \item[(ii)] The morphism $c : G \rightarrow G^\land$ is universal in the following sense: for any morphism $f : G \rightarrow H$, with $H$ a complete and Hausdorff LTA, there is a unique morphism $\phi : G^\land \rightarrow H$ such that $\phi \circ c = f$.
+\end{enumerate}
+\end{proposition}
+\begin{proof} \TODO
+\end{proof}
+
+\begin{proposition} Let $G$ be an LTA and $U \subseteq G$ an open nbhd of $1$. Then, we have a natural isomorphism $$U^\land \cong {\rm Ker}(G^\land \rightarrow G/U)$$
+given by, from right to left, $(g_W)_W \mapsto (g_{W})_{W \subseteq U}$.
+\end{proposition}
+\begin{proof} \TODO
+\end{proof}
+
+\begin{remark} Note that, by~\cref{prop:basic_properties_about_open_sets}, since $U \subseteq G$ is open, the quotient $G/U$ is discrete, and hence ${\rm Ker}(G^\land \rightarrow G/U) = \pi_U^{-1}(1)$ is open. Therefore $U^\land$ can be canonically seen as an open subgroup of $G^\land$. Moreover, under this isomorphism the projections of $U^\land$ become clear: and element $\widehat{g} \in U^\land$ is an element $\widehat{g} \in G^\land$ whose projection to $G/U$ is zero; this means that the projection to $G/W$ for any $W \subseteq U$ must, in fact, factor through $U/W$.
+\end{remark}
+
+\begin{proposition} Let $G$ be an LTA. If $\mathcal{U} = \{U_i\}$ is an FSG of $G$, then $\mathcal{U}^\land := \{U_i^\land\}$ is an FSG for $G^\land$.
+\end{proposition}
+\begin{proof} \TODO
+\end{proof}
+
+\begin{proposition} Completion commutes with arbitrary products. More concretely, if $\{G_i\}$ is a family of LTA's, there is a natural isomorphism $$\prod G_i^\land \cong ( \prod G_i )^\land.$$
+\end{proposition}
+\begin{proof} \TODO
+\end{proof}
+
+\noindent Since $\textbf{TopAb}$ has all finite biproducts, completion must commute with finite coproducts as well. But it turns out that it does not commute with infinite coproducts. The best we can do is the following.
+
+\begin{proposition} We have cannonical injections
+\[\bigoplus G_i^\land \xhookrightarrow{} (\bigoplus G_i)^\land \xhookrightarrow{} \prod G_i^\land\]
+whose composition is the injection from~\cref{prop:injection_from_the_infinite_coproduct_to_the_product}.
+\end{proposition}
+\begin{proof} \TODO
+\end{proof}
+
+\begin{remark} An example of why the first map is not always surjective can be given as follows. Let $p$ be a prime number. Consider $\mathbb{Z}$ with the $p$-adic topology, i.e. that generated by the FSG $\{p^k \mathbb{Z} \;:\; k \geq 0\}$. The completion $\mathbb{Z}^\land$ becomes the $p$-adic integers $\mathbb{Z}_p$. \TODO Finish this example
+\end{remark}
