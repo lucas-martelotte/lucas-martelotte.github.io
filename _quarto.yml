@@ -10,4 +10,4 @@ format:
   html:
     minimal: true
     include-in-header:
-      text: '<link rel="icon" href="favicon.png">'
+      text: '<link rel="icon" href="other_files/favicon.png">'
