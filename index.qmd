@@ -20,6 +20,6 @@ a
 
 <b>Other</b>:
 <ul>
-<li><a href="notes/other/masters.pdf">Master's dissertation</a></li>
-<li><a href="notes/other/bachelors.pdf">Bachelor's dissertation</a></li>
+<li><a href="other_files/masters.pdf">Master's dissertation</a></li>
+<li><a href="other_files/bachelors.pdf">Bachelor's dissertation</a></li>
 </ul>
