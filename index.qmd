@@ -15,13 +15,6 @@ I'm currently a PhD student at Nagoya University. <br>
 <li> \(2022\) <b>High-level Axioms for Graphical Linear Algebra</b>. <a href="https://doi.org/10.1016/j.scico.2022.102791">Journal link</a>.
 </ul>
 
-<b>Notes</b>:
-<ul>
-<li><a href="notes/sample/main.pdf">Notes</a></li>
-</ul>
-
-ab
-
 <b>Other</b>:
 <ul>
 <li><a href="other_files/masters.pdf">Master's dissertation</a></li>
