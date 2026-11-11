@@ -1,31 +1,59 @@
-name: Publish
-
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
-
-jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Compile notes
+      - name: Restore cached PDFs
+        uses: actions/cache@v4
+        with:
+          path: .pdf-cache
+          key: pdfs-${{ hashFiles('notes/**') }}
+          restore-keys: pdfs-
+
+      - name: Find notes that changed
+        id: changed
+        run: |
+          mkdir -p .pdf-cache
+          : > .hashes
+          roots=()
+          for dir in notes/*/; do
+            name=$(basename "$dir")
+            hash=$(find "$dir" -type f -not -path '*/build/*' -print0 \
+                     | sort -z | xargs -0 sha256sum | sha256sum | cut -c1-16)
+            echo "$name $hash" >> .hashes
+            if [ -f ".pdf-cache/$name-$hash.pdf" ]; then
+              echo "Reusing $name"
+              cp ".pdf-cache/$name-$hash.pdf" "${dir}main.pdf"
+            else
+              echo "Will compile $name"
+              roots+=("${dir}main.tex")
+            fi
+          done
+          if [ ${#roots[@]} -gt 0 ]; then
+            echo "any=true" >> "$GITHUB_OUTPUT"
+            {
+              echo "roots<<EOF"
+              printf '%s\n' "${roots[@]}"
+              echo "EOF"
+            } >> "$GITHUB_OUTPUT"
+          else
+            echo "any=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Compile changed notes
+        if: steps.changed.outputs.any == 'true'
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: notes/*/main.tex
+          root_file: ${{ steps.changed.outputs.roots }}
           work_in_root_file_dir: true
           latexmk_use_lualatex: true
+
+      - name: Update PDF cache
+        run: |
+          rm -rf .pdf-cache && mkdir .pdf-cache
+          while read -r name hash; do
+            cp "notes/$name/main.pdf" ".pdf-cache/$name-$hash.pdf"
+          done < .hashes
 
       - uses: quarto-dev/quarto-actions/setup@v2
 
@@ -35,13 +63,3 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4

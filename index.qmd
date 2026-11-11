@@ -13,7 +13,7 @@ I'm currently a PhD student at Nagoya University. <br>
 
 <b>Notes</b>:
 <ul>
-<li><a href="notes/sample/build/main.pdf">Notes</a></li>
+<li><a href="notes/sample/main.pdf">Notes</a></li>
 </ul>
 
 a
