@@ -1,0 +1,7 @@
+# LaTeX build output
+build/
+*.pdf
+
+# Quarto output
+_site/
+.quarto/

@@ -1,0 +1,280 @@
+% -------- Core Packages ------- %
+\usepackage{todonotes}
+\usepackage{biblatex} % For bibliography
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{etoolbox} % alternative latex kernel commands
+\usepackage{verbatim}
+%\usepackage{url}
+\usepackage{multicol} % For multicolumn documents
+% --------- Hyperlinks --------- %
+\usepackage{hyperref} % Hyperlinks
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+% ----- Language and Fonts ----- %
+\usepackage[utf8]{inputenc} % Input encoding
+\usepackage[T1]{fontenc} % Output encoding
+\usepackage{amsfonts} % various fonts (ex.: \mathbb)
+\usepackage{bbm} % Black-board fonts (\mathbbm)
+\usepackage{yfonts} % Goth characters
+\usepackage{dsfont} % Double stroke fonts (\mathds)
+\usepackage{lmodern} % Latin modern fonts
+\usepackage{mathrsfs} % Ralph Smith Formal Script font
+% ----- Calculation, Algorithms and Tables ----- %
+\usepackage{caption} % For caption customization
+\usepackage{longtable} % Multi-page tables
+\usepackage{calculation} % Calculational proofs
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+% ---------- Graphics ---------- %
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{xcolor} % Render color palletes
+% --- For commands with more than 9 arguments ---%
+\usepackage{array}
+\usepackage{xparse}
+
+
+% ============================== %
+% ======== ENVIRONMENTS ======== %
+% ============================== %
+
+\usepackage{amsthm}
+% Have to create different alias for the same
+% counter, otherwise cref cannot differentiate
+% between all of the different environments.
+\usepackage{aliascnt}
+\usepackage[nameinlink]{cleveref}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+
+\newaliascnt{definition}{theorem}
+\newtheorem{definition}[definition]{Definition}
+\aliascntresetthe{definition}
+
+\newaliascnt{corollary}{theorem}
+\newtheorem{corollary}[corollary]{Corollary}
+\aliascntresetthe{corollary}
+
+\newaliascnt{porism}{theorem}
+\newtheorem{porism}[porism]{Porism}
+\aliascntresetthe{porism}
+
+\newaliascnt{proposition}{theorem}
+\newtheorem{proposition}[proposition]{Proposition}
+\aliascntresetthe{proposition}
+
+\newaliascnt{lemma}{theorem}
+\newtheorem{lemma}[lemma]{Lemma}
+\aliascntresetthe{lemma}
+
+\newaliascnt{conjecture}{theorem}
+\newtheorem{conjecture}[conjecture]{Conjecture}
+\aliascntresetthe{conjecture}
+
+\newaliascnt{example}{theorem}
+\newtheorem{example}[example]{Example}
+\aliascntresetthe{example}
+
+\newaliascnt{situation}{theorem}
+\newtheorem{situation}[situation]{Situation}
+\aliascntresetthe{situation}
+
+\newaliascnt{remark}{theorem}
+\newtheorem{remark}[remark]{Remark}
+\aliascntresetthe{remark}
+
+\newaliascnt{notation}{theorem}
+\newtheorem{notation}[notation]{Notation}
+\aliascntresetthe{notation}
+
+\newaliascnt{exercise}{theorem}
+\newtheorem{exercise}[exercise]{Exercise}
+\aliascntresetthe{exercise}
+
+% Now creating the crefs
+\crefname{theorem}{Thm.}{Thms.}
+\crefname{definition}{Def.}{Defs.}
+\crefname{corollary}{Cor.}{Cors.}
+\crefname{porism}{Por.}{Pors.}
+\crefname{proposition}{Prop.}{Props.}
+\crefname{lemma}{Lem.}{Lems.}
+\crefname{conjecture}{Conjecture}{Conjectures}
+\crefname{example}{Ex.}{Exs.}
+\crefname{remark}{Rmk.}{Rmks.}
+\crefname{notation}{Notation}{Notations}
+\crefname{exercise}{Exercise}{Exercises}
+\crefname{section}{Section}{Section}
+\crefname{situation}{Situation}{Situations}
+
+% ============================== %
+% ========== COMMANDS ========== %
+% ============================== %
+
+\ExplSyntaxOn
+\NewDocumentCommand{\newlistcommand}{mm}
+ {
+  \NewDocumentCommand{#1}{m}
+   {
+    \clist_set:Nn \l_xaero_args_clist { ##1 }
+    #2
+   }
+ }
+\NewExpandableDocumentCommand{\argx}{m}
+ {
+  \clist_item:Nn \l_xaero_args_clist { #1 }
+ }
+\ExplSyntaxOff
+
+% ============================== %
+% =========== CRULE ============ %
+% ============================== %
+
+\definecolor{black}{RGB}{0,0,0}
+\definecolor{white}{RGB}{255,255,255}
+\definecolor{green}{RGB}{5, 237, 28}
+\definecolor{red}{RGB}{244,0,0}
+\definecolor{light_green}{RGB}{139, 195, 74}
+\definecolor{dark_blue}{RGB}{0, 0, 255}
+\definecolor{light_blue}{RGB}{0, 238, 255}
+\definecolor{lilac}{RGB}{216, 161, 255}
+\definecolor{orange}{RGB}{255, 152, 0}
+\definecolor{purple}{RGB}{148, 5, 250}
+\definecolor{marine_blue}{RGB}{97, 250, 191}
+\definecolor{deep_orange}{RGB}{255, 106, 59}
+\definecolor{yellow}{RGB}{255, 235, 59}
+\definecolor{pink}{RGB}{255, 133, 175}
+\definecolor{deep_purple}{RGB}{103, 58, 183}
+\definecolor{gray}{RGB}{200, 200, 200}
+\definecolor{dark_gray}{RGB}{150, 150, 150}
+\definecolor{darker_gray}{RGB}{100, 100, 100}
+
+\newcommand\cruleoutline[3][black]{\begingroup
+    \fboxsep=0pt\raisebox{\fboxrule}{%
+    \fbox{\textcolor{#1}{%
+    \rule{\dimexpr #2-2\fboxrule\relax}{\dimexpr #3-2\fboxrule\relax}%
+}}}\endgroup}
+\newcommand\crule[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
+
+%======== README - DANG ========%
+% This package implements the environment "dang" using the tcolorbox package. The environment creates a box contour around whatever is written inside it.
+% The code was taken from from https://tex.stackexchange.com/questions/369430/theorems-and-definitions-boxes-numbering-should-be-chapter-wise
+%===============================%
+
+\usepackage[most]{tcolorbox}
+\tcbset{%
+  dang/.style={
+    enhanced,
+    sharp corners,
+    enlarge top by=0.2cm,
+    enlarge bottom by=0.2cm,
+    before skip=2mm, after skip=2mm,
+    colback=white, colframe=black,
+    boxrule=0.1mm
+    }
+}
+
+\tcbset{%
+  vdang/.style={
+    enhanced,
+    sharp corners,
+    enlarge top by=0.2cm,
+    enlarge bottom by=0.2cm,
+    before skip=2mm, after skip=2mm,
+    colback=white, colframe=black,
+    frame hidden,
+    borderline north={0.1mm}{0pt}{black},
+    borderline south={0.1mm}{0pt}{black},
+    }
+}
+
+\newtcolorbox{dang}[1][]{dang,#1}
+\newtcolorbox{vdang}[1][]{vdang,#1}
+
+
+% ============================== %
+% ======= HCALCULATION ========= %
+% ============================== %
+
+\usepackage{amsmath}
+\usepackage{environ}
+
+% See https://tex.stackexchange.com/questions/51682/is-it-possible-to-pagebreak-aligned-equations
+% for using \allowdisplaybreaks to break page on amsmath environments..
+
+\NewEnviron{hcalculation}[2][\iff]{%
+  \newcommand{\hstep}[3][#1]{%
+    \\ ##1  %
+    & \quad ##2 %
+    & \scalebox{0.9}{$\left( \text{##3} \right)$}}
+  % 3 columns with content in math mode (c l r)
+  % The last one is aligned to the right margin.
+  {
+  \allowdisplaybreaks
+  \begin{flalign*}
+    & \quad #2 &
+    \BODY
+  \end{flalign*}
+  }
+}
+
+% ============================== %
+% ========== RUFINO ============ %
+% ============================== %
+
+% QUALITY OF LIFE NOTATION
+\newcommand{\cb}[1]{\begin{center}\textbf{#1}\end{center}}
+\newcommand{\F}[1]{\mathbb{F}_{#1}}
+\newcommand{\TODO}{$\color{red}\text{TODO:}\color{black}$ }
+\newcommand{\DONEBUT}{$\color{orange}\text{DONE BUT:}\color{black}$ }
+\usepackage[only,llbracket,rrbracket, llangle, rrangle]{stmaryrd}
+\newcommand{\llangle}{\left\langle\!\left\lvert}
+\newcommand{\rrangle}{\right\rvert\!\right\rangle}
+
+
+% GAUSSIAN INTEGERS AND QUARTIC RECIPROCITY
+\newcommand{\legendre}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
+\newcommand{\quartic}[2]{\genfrac{[}{]}{}{}{\; #1 \;}{\; #2 \;}}
+\newcommand{\ch}[1]{\text{Char}(#1)}
+\newcommand{\zequiv}[1]{\overset{#1}{\equiv}}
+\newcommand{\gequiv}[1]{\overset{#1}{\cong}}
+\newcommand{\gnorm}[1]{\mathbb{N}#1}
+\newcommand{\conj}[1]{\overline{#1}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Ff}{\mathbb{F}}
+\newcommand{\HP}{\mathbb{H}}
+\newcommand{\gZ}{\mathbb{Z}[i]}
+\newcommand{\Cl}[1]{Cl_{#1}}
+\newcommand{\Oint}[1]{\mathcal{O}_{#1}}
+\newcommand{\Pideal}{\mathfrak{P}}
+\newcommand{\pideal}{\mathfrak{p}}
+\newcommand{\mideal}{\mathfrak{m}}
+\newcommand{\aideal}{\mathfrak{a}}
+\newcommand{\bideal}{\mathfrak{b}}
+\newcommand{\cideal}{\mathfrak{c}}
+\newcommand{\hideal}{\mathfrak{h}}
+\newcommand{\SL}{\text{SL}_2(\mathbb{Z})}
+\newcommand{\Norm}{\text{N}}
+
+%===== WIDE HAT =====%
+\usepackage{scalerel,stackengine}
+\stackMath
+\newcommand\bighat[1]{%
+\savestack{\tmpbox}{\stretchto{%
+  \scaleto{%
+    \scalerel*[\widthof{\ensuremath{#1}}]{\kern-.6pt\bigwedge\kern-.6pt}%
+    {\rule[-\textheight/2]{1ex}{\textheight}}%WIDTH-LIMITED BIG WEDGE
+  }{\textheight}%
+}{0.5ex}}%
+\stackon[1pt]{#1}{\tmpbox}%
+}
+%\parskip 1ex
+%====================%

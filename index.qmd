@@ -1,0 +1,25 @@
+Hello, my name is <b>Lucas Rufino</b>. <br>
+I'm currently a PhD student at Nagoya University. <br>
+
+
+<b>Publications</b>:<ul><li> \(2026\) <b>Lengths of Hodge Characters in Fermat Varieties</b>. <a href="https://arxiv.org/abs/2609.27301">Arxiv link</a>.
+</li>
+<li> \(2025\) <b>Generalizing the Invertible Matrix Theorem with Linear Relations using Graphical Linear Algebra</b>. <a href="https://arxiv.org/abs/2502.16783">Arxiv link</a>.
+</li>
+<li> \(2025\) <b>Point-free Calculational Proofs and Program Derivation in Linear Algebra using a Graphical Syntax</b>. <a href="https://doi.org/10.1017/S0956796825000085">Journal link</a>.
+</li>
+<li> \(2022\) <b>High-level Axioms for Graphical Linear Algebra</b>. <a href="https://doi.org/10.1016/j.scico.2022.102791">Journal link</a>.
+</ul>
+
+<b>Notes</b>:
+<ul>
+<li><a href="notes/sample/build/main.pdf">Notes</a></li>
+</ul>
+
+a
+
+<b>Other</b>:
+<ul>
+<li><a href="notes/other/masters.pdf">Master's dissertation</a></li>
+<li><a href="notes/other/bachelors.pdf">Bachelor's dissertation</a></li>
+</ul>

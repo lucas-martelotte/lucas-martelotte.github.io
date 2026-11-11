@@ -1,0 +1,10 @@
+project:
+  output-dir: _site
+  render:
+    - index.qmd
+  resources:
+    - notes/*.pdf
+
+format:
+  html:
+    minimal: true
