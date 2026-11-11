@@ -1,6 +1,6 @@
 # LaTeX build output
 build/
-*.pdf
+notes/**/*.pdf
 
 # Quarto output
 _site/
