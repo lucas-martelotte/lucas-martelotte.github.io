@@ -17,7 +17,7 @@ I'm currently a PhD student at Nagoya University. <br>
 
 <b>Notes</b>:
 <ul>
-<li><a href="notes/topological_algebra/main.pdf">Topological Algebra</a></li>
+<li><a href="notes/topological_algebra/main.pdf">Pro-Unipotent Completion</a></li>
 </ul>
 
 <b>Other</b>:
